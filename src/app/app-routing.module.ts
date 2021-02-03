@@ -11,25 +11,20 @@ const routes: Routes = [
     {
         path: '',
         canActivate: [PxbAuthGuard],
-        children: [
-            { path: 'home', component: HomePage }
-        ],
+        children: [{ path: 'home', component: HomePage }],
     },
-  // {
-  //   path: 'auth',
-  //   loadChildren: (): any => import('./auth/auth.module').then((m: any) => m.AuthPageModule)
-  // },
-  // {
-  //   path: 'home',
-  //   loadChildren: (): any => import('./home/home.module').then((m: any) => m.HomePageModule)
-  // },
+    // {
+    //   path: 'auth',
+    //   loadChildren: (): any => import('./auth/auth.module').then((m: any) => m.AuthPageModule)
+    // },
+    // {
+    //   path: 'home',
+    //   loadChildren: (): any => import('./home/home.module').then((m: any) => m.HomePageModule)
+    // },
 ];
 
 @NgModule({
-  imports: [
-    RouterModule.forRoot(routes)
-  ],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}

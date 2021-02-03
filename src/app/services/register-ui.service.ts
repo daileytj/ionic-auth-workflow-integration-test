@@ -45,11 +45,10 @@ export class RegisterUIService implements IPxbRegisterUIService {
                 }
                 if (randomFailure()) {
                     return reject();
-                } 
-                    const eula = 'Sample Eula Text';
-                    this._pxbAuthConfig.eula = eula; // This prevents future EULA load requests.
-                    return resolve(eula);
-                
+                }
+                const eula = 'Sample Eula Text';
+                this._pxbAuthConfig.eula = eula; // This prevents future EULA load requests.
+                return resolve(eula);
             }, TIMEOUT_MS);
         });
     }

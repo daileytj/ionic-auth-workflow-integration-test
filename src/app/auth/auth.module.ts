@@ -8,12 +8,7 @@ import { AuthPage } from './auth.page';
 import { PxbAuthModule } from '@pxblue/angular-auth-workflow';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    PxbAuthModule,
-  ],
-  declarations: [AuthPage]
+    imports: [CommonModule, FormsModule, IonicModule, PxbAuthModule],
+    declarations: [AuthPage],
 })
 export class AuthPageModule {}

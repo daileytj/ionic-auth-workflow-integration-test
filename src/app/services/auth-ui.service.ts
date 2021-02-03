@@ -37,6 +37,7 @@ export class AuthUIService implements IPxbAuthUIService {
 
     login(email: string, password: string, rememberMe: boolean): Promise<void> {
         console.log(
+            // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
             `Performing a sample Login request with the following credentials:\n  email: ${email} \n  password: ${password} \n  rememberMe: ${rememberMe}`
         );
         return new Promise((resolve, reject) => {
@@ -84,7 +85,7 @@ export class AuthUIService implements IPxbAuthUIService {
         console.log(`Performing a sample verifyResetCode request with the following credentials:\n code: ${resetCode}`);
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                if (!resetCode || resetCode.toUpperCase() === 'INVALID_LINK' ||  resetCode.toUpperCase() === 'FAIL') {
+                if (!resetCode || resetCode.toUpperCase() === 'INVALID_LINK' || resetCode.toUpperCase() === 'FAIL') {
                     return reject();
                 }
                 return resolve();
