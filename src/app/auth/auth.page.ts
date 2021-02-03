@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {PxbAuthConfig, AUTH_ROUTES} from "@pxblue/angular-auth-workflow";
 
 @Component({
   selector: 'app-auth',
@@ -7,6 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AuthPage {
 
-  constructor() { }
-
+  constructor() {
+    // If the ON_AUTHENTICATED route is not pre-populated by PXB auth workflow, provide it below.
+    if (!AUTH_ROUTES.ON_AUTHENTICATED || AUTH_ROUTES.ON_AUTHENTICATED === '/') {
+      AUTH_ROUTES.ON_AUTHENTICATED = 'home';
+    }
+  }
 }
