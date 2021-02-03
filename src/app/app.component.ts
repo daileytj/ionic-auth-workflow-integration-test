@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {LocalStorageService} from "./services/localStorage.service";
-import {NavigationEnd, Router} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -8,12 +7,7 @@ import {NavigationEnd, Router} from "@angular/router";
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  constructor(localStorageService: LocalStorageService, router: Router) {
+  constructor(localStorageService: LocalStorageServicer) {
     localStorageService.listenForAuthLoadingStateChanges();
-    router.events.subscribe((route) => {
-      if (route instanceof NavigationEnd) {
-        console.log(route);
-      }
-    });
   }
 }
